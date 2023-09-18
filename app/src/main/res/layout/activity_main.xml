@@ -40,10 +40,12 @@
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size"
                 android:textFontWeight="500"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/base_padding"
                 app:icon="@drawable/ic_btn_search"
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
-                app:iconPadding="8dp"
+                app:iconPadding="@dimen/icon_padding"
                 android:text="@string/search" />
 
             <Button
@@ -57,10 +59,12 @@
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size"
                 android:textFontWeight="500"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/base_padding"
                 app:icon="@drawable/ic_btn_library"
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
-                app:iconPadding="8dp"
+                app:iconPadding="@dimen/icon_padding"
                 android:text="@string/media" />
 
             <Button
@@ -72,11 +76,13 @@
                 android:backgroundTint="@color/white"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size"
+                android:textAllCaps="false"
                 android:textFontWeight="500"
+                app:cornerRadius="@dimen/base_padding"
                 app:icon="@drawable/ic_btn_settings"
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
-                app:iconPadding="8dp"
+                app:iconPadding="@dimen/icon_padding"
                 android:text="@string/settings" />
         </LinearLayout>
 

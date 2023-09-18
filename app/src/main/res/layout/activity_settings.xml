@@ -25,19 +25,19 @@
         <Switch
             android:id="@+id/switchTheme"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="@dimen/menu_height"
             android:paddingEnd="6dp"
             android:gravity="center|start"
-            android:textSize="16sp"
+            android:textSize="@dimen/menu_text_size"
             android:text="@string/dark_theme"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <TextView
             android:id="@+id/textShare"
-            android:layout_height="61dp"
+            android:layout_height="@dimen/menu_height"
             android:layout_width="match_parent"
-            android:paddingEnd="12dp"
-            android:textSize="16sp"
+            android:paddingEnd="@dimen/end_padding"
+            android:textSize="@dimen/menu_text_size"
             android:textColor="@color/black"
             android:gravity="center|start"
             android:text="@string/share"
@@ -45,10 +45,10 @@
 
         <TextView
             android:id="@+id/textSupport"
-            android:layout_height="61dp"
+            android:layout_height="@dimen/menu_height"
             android:layout_width="match_parent"
-            android:paddingEnd="12dp"
-            android:textSize="16sp"
+            android:paddingEnd="@dimen/end_padding"
+            android:textSize="@dimen/menu_text_size"
             android:textColor="@color/black"
             android:gravity="center|start"
             android:text="@string/support"
@@ -56,10 +56,10 @@
 
         <TextView
             android:id="@+id/textTerms"
-            android:layout_height="61dp"
+            android:layout_height="@dimen/menu_height"
             android:layout_width="match_parent"
-            android:paddingEnd="12dp"
-            android:textSize="16sp"
+            android:paddingEnd="@dimen/end_padding"
+            android:textSize="@dimen/menu_text_size"
             android:textColor="@color/black"
             android:gravity="center|start"
             android:text="@string/terms"

@@ -30,6 +30,7 @@
             android:gravity="center|start"
             android:textSize="@dimen/menu_text_size"
             android:text="@string/dark_theme"
+            android:fontFamily="@font/ys_display_medium"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <TextView
@@ -41,6 +42,7 @@
             android:textColor="@color/black"
             android:gravity="center|start"
             android:text="@string/share"
+            android:fontFamily="@font/ys_display_medium"
             app:drawableEndCompat="@drawable/ic_share" />
 
         <TextView
@@ -52,6 +54,7 @@
             android:textColor="@color/black"
             android:gravity="center|start"
             android:text="@string/support"
+            android:fontFamily="@font/ys_display_medium"
             app:drawableEndCompat="@drawable/ic_support" />
 
         <TextView
@@ -63,6 +66,7 @@
             android:textColor="@color/black"
             android:gravity="center|start"
             android:text="@string/terms"
+            android:fontFamily="@font/ys_display_medium"
             app:drawableEndCompat="@drawable/ic_arrow_forward" />
     </LinearLayout>
 </LinearLayout>

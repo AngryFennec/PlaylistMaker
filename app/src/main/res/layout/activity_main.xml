@@ -46,6 +46,7 @@
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
                 app:iconPadding="@dimen/icon_padding"
+                android:fontFamily="@font/ys_display_medium"
                 android:text="@string/search" />
 
             <Button
@@ -65,6 +66,7 @@
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
                 app:iconPadding="@dimen/icon_padding"
+                android:fontFamily="@font/ys_display_medium"
                 android:text="@string/media" />
 
             <Button
@@ -83,6 +85,7 @@
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
                 app:iconPadding="@dimen/icon_padding"
+                android:fontFamily="@font/ys_display_medium"
                 android:text="@string/settings" />
         </LinearLayout>
 

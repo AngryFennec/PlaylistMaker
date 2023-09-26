@@ -6,13 +6,85 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/blue"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarSettings"
+            android:layout_height="56dp"
+            android:layout_width="match_parent"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white"/>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="24dp"
+            android:paddingBottom="28dp"
+            android:paddingHorizontal="@dimen/base_padding"
+            >
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:paddingHorizontal="@dimen/base_padding"
+                android:layout_marginBottom="@dimen/base_padding"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size"
+                android:textFontWeight="500"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/base_padding"
+                app:icon="@drawable/ic_btn_search"
+                app:iconTint="@color/gray"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/icon_padding"
+                android:text="@string/search" />
+
+            <Button
+                android:id="@+id/btnMedia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:paddingHorizontal="@dimen/base_padding"
+                android:layout_marginBottom="@dimen/base_padding"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size"
+                android:textFontWeight="500"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/base_padding"
+                app:icon="@drawable/ic_btn_library"
+                app:iconTint="@color/gray"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/icon_padding"
+                android:text="@string/media" />
+
+            <Button
+                android:id="@+id/btnSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:paddingHorizontal="@dimen/base_padding"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size"
+                android:textAllCaps="false"
+                android:textFontWeight="500"
+                app:cornerRadius="@dimen/base_padding"
+                app:icon="@drawable/ic_btn_settings"
+                app:iconTint="@color/gray"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/icon_padding"
+                android:text="@string/settings" />
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

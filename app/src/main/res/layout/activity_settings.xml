@@ -35,19 +35,19 @@
             android:fontFamily="@font/ys_display_medium"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-        <TextView
+        <Button
             android:id="@+id/textShare"
             style="@style/TextView.Settings"
             android:text="@string/share"
             app:drawableEndCompat="@drawable/ic_share" />
 
-        <TextView
+        <Button
             android:id="@+id/textSupport"
             style="@style/TextView.Settings"
             android:text="@string/support"
             app:drawableEndCompat="@drawable/ic_support" />
 
-        <TextView
+        <Button
             android:id="@+id/textTerms"
             style="@style/TextView.Settings"
             android:text="@string/terms"

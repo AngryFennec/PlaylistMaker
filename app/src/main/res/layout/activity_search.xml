@@ -1,8 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    android:orientation="vertical"
+    android:background="@color/secondaryBackground"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSearch"
+        android:layout_height="56dp"
+        android:layout_width="match_parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/search"
+        app:titleTextColor="@color/secondaryColor"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/base_padding"
+        android:paddingEnd="@dimen/base_padding"
+        tools:ignore="RtlSymmetry">
+
+        <EditText
+            android:id="@+id/searchField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/inputBackground"
+            android:drawableStart="@drawable/ic_btn_search"
+            android:drawablePadding="8dp"
+            app:cornerRadius="@dimen/base_padding"
+            android:drawableTint="@color/hintColor"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:paddingEnd="0dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hintColor" />
+
+        <ImageButton
+            android:id="@+id/clearButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end|center"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_clear"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </FrameLayout>
+
+</LinearLayout>

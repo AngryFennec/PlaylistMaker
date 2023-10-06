@@ -7,4 +7,6 @@
     <color name="primaryBackground">#3772E7</color>
     <color name="secondaryBackground">#FFFFFF</color>
     <color name="secondaryColor">#1A1B22</color>
+    <color name="hintColor">#AEAFB4</color>
+    <color name="inputBackground">#E6E8EB</color>
 </resources>

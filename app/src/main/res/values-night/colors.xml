@@ -3,4 +3,6 @@
     <color name="primaryBackground">#FF000000</color>
     <color name="secondaryBackground">#FF000000</color>
     <color name="secondaryColor">#FFFFFF</color>
+    <color name="hintColor">#FF000000</color>
+    <color name="inputBackground">#FFFFFF</color>
 </resources>

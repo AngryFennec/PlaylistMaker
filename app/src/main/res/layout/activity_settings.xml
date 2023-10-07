@@ -26,14 +26,11 @@
 
         <Switch
             android:id="@+id/switchTheme"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/menu_height"
-            android:paddingEnd="6dp"
-            android:gravity="center|start"
-            android:textSize="@dimen/menu_text_size"
             android:text="@string/dark_theme"
-            android:fontFamily="@font/ys_display_medium"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
+            tools:ignore="UseSwitchCompatOrMaterialXml"
+            style="@style/SwitchStyle"
+            android:theme="@style/SwitchStyle"
+            />
 
         <Button
             android:id="@+id/textShare"

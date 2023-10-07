@@ -57,9 +57,12 @@ class SearchActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s.isNullOrEmpty()) {
                     clearButton.visibility = View.INVISIBLE
+                    currentText = ""
                 } else {
                     clearButton.visibility = View.VISIBLE
+                    currentText = s.toString()
                 }
+
             }
             override fun afterTextChanged(s: Editable?) {}
         }

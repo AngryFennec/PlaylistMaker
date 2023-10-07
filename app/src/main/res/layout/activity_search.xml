@@ -26,20 +26,20 @@
         <EditText
             android:id="@+id/searchField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/inputBackground"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_corners_8dp"
             android:drawableStart="@drawable/ic_btn_search"
             android:drawablePadding="8dp"
-            app:cornerRadius="@dimen/base_padding"
             android:drawableTint="@color/hintColor"
             android:hint="@string/search"
             android:inputType="text"
             android:maxLines="1"
-            android:minHeight="48dp"
-            android:padding="10dp"
+            android:padding="8dp"
             android:paddingEnd="0dp"
             android:ems="10"
+            android:textCursorDrawable="@null"
             android:textColor="@color/black"
+            android:textSize="@dimen/menu_text_size"
             android:textColorHint="@color/hintColor" />
 
         <ImageButton

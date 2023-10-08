@@ -37,7 +37,7 @@
             android:padding="8dp"
             android:paddingEnd="0dp"
             android:ems="10"
-            android:textCursorDrawable="@null"
+            android:textCursorDrawable="@drawable/bg_cursor"
             android:textColor="@color/black"
             android:textSize="@dimen/menu_text_size"
             android:textColorHint="@color/hintColor" />

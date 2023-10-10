@@ -10,4 +10,8 @@
     <color name="secondaryColor">#1A1B22</color>
     <color name="hintColor">#AEAFB4</color>
     <color name="inputBackground">#E6E8EB</color>
+    <color name="trackTitle">#FF000000</color>
+    <color name="trackSubtitle">#AEAFB4</color>
+
+
 </resources>

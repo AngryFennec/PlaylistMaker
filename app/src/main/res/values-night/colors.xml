@@ -5,5 +5,7 @@
     <color name="secondaryColor">#FFFFFF</color>
     <color name="hintColor">#FF000000</color>
     <color name="inputBackground">#FFFFFF</color>
+    <color name="trackTitle">#FFFFFF</color>
+    <color name="trackSubtitle">#FFFFFF</color>
 
 </resources>

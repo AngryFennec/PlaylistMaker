@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/blue"
+        android:background="@color/primaryBackground"
         >
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarSettings"
@@ -31,59 +31,36 @@
 
             <Button
                 android:id="@+id/btnSearch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:paddingHorizontal="@dimen/base_padding"
-                android:layout_marginBottom="@dimen/base_padding"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/text_size"
-                android:textFontWeight="500"
-                android:textAllCaps="false"
                 app:cornerRadius="@dimen/base_padding"
                 app:icon="@drawable/ic_btn_search"
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
                 app:iconPadding="@dimen/icon_padding"
-                android:text="@string/search" />
+                android:text="@string/search"
+                style="@style/MainButton"
+                />
 
             <Button
                 android:id="@+id/btnMedia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:paddingHorizontal="@dimen/base_padding"
-                android:layout_marginBottom="@dimen/base_padding"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/text_size"
-                android:textFontWeight="500"
-                android:textAllCaps="false"
                 app:cornerRadius="@dimen/base_padding"
                 app:icon="@drawable/ic_btn_library"
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
                 app:iconPadding="@dimen/icon_padding"
-                android:text="@string/media" />
+                android:text="@string/media"
+                style="@style/MainButton"
+                />
 
             <Button
                 android:id="@+id/btnSettings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:paddingHorizontal="@dimen/base_padding"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/text_size"
-                android:textAllCaps="false"
-                android:textFontWeight="500"
                 app:cornerRadius="@dimen/base_padding"
                 app:icon="@drawable/ic_btn_settings"
                 app:iconTint="@color/gray"
                 app:iconGravity="textStart"
                 app:iconPadding="@dimen/icon_padding"
-                android:text="@string/settings" />
+                android:text="@string/settings"
+                style="@style/MainButton"
+                />
         </LinearLayout>
 
     </LinearLayout>

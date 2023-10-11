@@ -11,4 +11,5 @@
     <dimen name="track_height">64dp</dimen>
     <dimen name="track_image">45dp</dimen>
     <dimen name="track_dot">16dp</dimen>
+    <dimen name="list_margin">8dp</dimen>
 </resources>

@@ -15,4 +15,8 @@
     <string name="mailto">mailto:</string>
     <string name="mail_text">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="mail_title">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="track_time">Track time</string>
+    <string name="artist_name">Artist name</string>
+    <string name="track_name">Track name</string>
+
 </resources>

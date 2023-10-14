@@ -3,6 +3,7 @@
     <dimen name="base_padding">16dp</dimen>
     <dimen name="text_size">22sp</dimen>
     <dimen name="menu_text_size">16sp</dimen>
+    <dimen name="small_text_size">14sp</dimen>
     <dimen name="track_line_height">24sp</dimen>
     <dimen name="small_text">11sp</dimen>
     <dimen name="icon_padding">8dp</dimen>
@@ -12,4 +13,5 @@
     <dimen name="track_image">45dp</dimen>
     <dimen name="track_dot">16dp</dimen>
     <dimen name="list_margin">8dp</dimen>
+    <dimen name="placeholder_image_size">120dp</dimen>
 </resources>

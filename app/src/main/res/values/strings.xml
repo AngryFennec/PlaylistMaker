@@ -18,5 +18,8 @@
     <string name="track_time">Track time</string>
     <string name="artist_name">Artist name</string>
     <string name="track_name">Track name</string>
+    <string name="refresh">Обновить</string>
+    <string name="not_found">Ничего не нашлось</string>
+    <string name="no_connection">Проблемы со связью\n\nЗагрузка не удалась. Проверьте подключение к интернету</string>
 
 </resources>

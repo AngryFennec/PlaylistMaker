@@ -1,9 +1,11 @@
 package com.example.playlistmaker
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 
@@ -17,6 +19,9 @@ class SettingsActivity : AppCompatActivity() {
         val shareBtn = findViewById<Button>(R.id.textShare)
         val supportBtn = findViewById<Button>(R.id.textSupport)
         val termsBtn = findViewById<Button>(R.id.textTerms)
+        val switchTheme = findViewById<Switch>(R.id.switchTheme)
+        val switchPref = getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        switchTheme.isChecked = switchPref.getBoolean(DARK_THEME, false)
 
         shareBtn.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
@@ -48,6 +53,14 @@ class SettingsActivity : AppCompatActivity() {
             val termsUrl = getString(R.string.yap_offer)
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(termsUrl))
             startActivity(intent)
+        }
+
+        switchTheme.setOnCheckedChangeListener { _, isChecked ->
+            (applicationContext as App).switchTheme(isChecked)
+            getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+                .edit()
+                .putBoolean(DARK_THEME, isChecked)
+                .apply()
         }
     }
 }

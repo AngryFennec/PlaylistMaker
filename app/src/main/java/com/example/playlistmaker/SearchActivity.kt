@@ -1,6 +1,7 @@
 package com.example.playlistmaker
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -10,7 +11,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
-import androidx.constraintlayout.widget.Placeholder
+import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
@@ -30,6 +31,12 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var placeholderText: TextView
     private lateinit var refreshButton: Button
     private lateinit var trackList: RecyclerView
+    private lateinit var sharedPrefs: SharedPreferences
+    private lateinit var adapter: TrackAdapter
+    private lateinit var historyAdapter: TrackAdapter
+    private lateinit var searchHistory: SearchHistory
+    private lateinit var historyView: LinearLayout
+
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
@@ -39,10 +46,7 @@ class SearchActivity : AppCompatActivity() {
     private val iTunesService = retrofit.create(ItunesApiService::class.java)
 
     private var tracks = ArrayList<Track>()
-
-    private val adapter = TrackAdapter()
-
-
+    private var historyTracks = ArrayList<Track>()
 
     companion object {
         const val CURRENT_TEXT = "CURRENT_TEXT"
@@ -53,6 +57,10 @@ class SearchActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbarSearch)
         setSupportActionBar(toolbar)
 
+        sharedPrefs = getSharedPreferences(SEARCH_HISTORY, Context.MODE_PRIVATE)
+        searchHistory = SearchHistory(sharedPrefs)
+        adapter = TrackAdapter(::onHistoryTrackClick)
+        historyAdapter = TrackAdapter(::onHistoryTrackClick)
 
 
         searchField = findViewById(R.id.searchField)
@@ -71,9 +79,17 @@ class SearchActivity : AppCompatActivity() {
         refreshButton = findViewById(R.id.refreshBtn)
 
         adapter.trackList = tracks
+        historyAdapter.trackList = historyTracks
+
         trackList = findViewById(R.id.searchResults)
         trackList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         trackList.adapter = adapter
+
+        historyView = findViewById(R.id.searchHistory)
+        val historyList = findViewById<RecyclerView>(R.id.historyList)
+        val clearHistoryBtn = findViewById<Button>(R.id.clearHistory)
+
+        historyList.adapter = historyAdapter
 
 
         searchField.setOnEditorActionListener { _, actionId, _ ->
@@ -82,6 +98,29 @@ class SearchActivity : AppCompatActivity() {
                 true
             }
             false
+        }
+
+        searchField.setOnFocusChangeListener { view, hasFocus ->
+            if (hasFocus && searchField.text.isEmpty()) {
+                showSearchHistory()
+            } else historyView.visibility = View.INVISIBLE
+        }
+
+        searchField.requestFocus()
+
+
+        searchField.doOnTextChanged { text, _, _, _ ->
+            if (searchField.hasFocus() && text?.isEmpty() == true) {
+                showSearchHistory()
+            } else {
+                historyView.visibility = View.GONE
+            }
+        }
+
+        clearHistoryBtn.setOnClickListener{
+            trackList.visibility = View.VISIBLE
+            historyView.visibility = View.INVISIBLE
+            searchHistory.clearHistory()
         }
 
     }
@@ -182,6 +221,18 @@ class SearchActivity : AppCompatActivity() {
         placeholderText.text = getText(R.string.not_found)
     }
 
+    private fun showSearchHistory() {
+        changePlaceholdersVisibility(false, false)
+        val tracks = searchHistory.getTracks()
+        if (tracks.isNotEmpty()) {
+            trackList.visibility = View.INVISIBLE
+            historyView.visibility = View.VISIBLE
+            historyTracks.clear()
+            historyTracks.addAll(tracks)
+            historyAdapter.notifyDataSetChanged()
+        }
+    }
+
     private fun changePlaceholdersVisibility(shouldShow: Boolean, shouldShowBtn: Boolean) {
         if (shouldShow) {
             placeholderImage.visibility = View.VISIBLE
@@ -195,5 +246,17 @@ class SearchActivity : AppCompatActivity() {
         } else {
             refreshButton.visibility = View.INVISIBLE
         }
+    }
+
+    private fun onHistoryTrackClick(track: Track) {
+        historyTracks.clear()
+        historyTracks.addAll(searchHistory.getTracks())
+        if (historyTracks.contains(track)) {
+            historyTracks.remove(track)
+        } else if (historyTracks.size == HISTORY_SIZE) {
+            historyTracks.removeAt(HISTORY_SIZE - 1)
+        }
+        historyTracks.add(0, track)
+        searchHistory.addTracks(historyTracks)
     }
 }

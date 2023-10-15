@@ -24,7 +24,7 @@
         android:paddingStart="@dimen/base_padding"
         tools:ignore="RtlSymmetry">
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/switchTheme"
             android:text="@string/dark_theme"
             tools:ignore="UseSwitchCompatOrMaterialXml"

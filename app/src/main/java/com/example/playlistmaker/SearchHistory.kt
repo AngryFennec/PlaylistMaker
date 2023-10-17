@@ -22,18 +22,17 @@ class SearchHistory(private val sharedPreferences: SharedPreferences) {
         return jsonG.fromJson(json, object: TypeToken<MutableList<Track>>() {} .type) ?: mutableListOf()
     }
 
-    fun addTrack(track: Track) {
+    fun addTrack(track: Track, index: Int) {
         val editor = sharedPreferences.edit()
-
         val json = sharedPreferences.getString(SEARCH_HISTORY, null)
         val gson = Gson()
+
         val currentHistory: MutableList<Track> =
             gson.fromJson(json, object : TypeToken<MutableList<Track>>() {}.type) ?: mutableListOf()
 
         currentHistory.removeAll { it.trackId == track.trackId }
 
-        currentHistory.add(0, track)
-
+        currentHistory.add(index, track)
         while (currentHistory.size > HISTORY_SIZE) {
             currentHistory.removeAt(currentHistory.lastIndex)
         }
@@ -44,8 +43,19 @@ class SearchHistory(private val sharedPreferences: SharedPreferences) {
     }
 
     fun addTracks(trackList: List<Track>) {
-        trackList.forEach {
-            addTrack(it)
+        val editor = sharedPreferences.edit()
+        val json = sharedPreferences.getString(SEARCH_HISTORY, null)
+        val gson = Gson()
+        var currentHistory = ArrayList<Track>()
+        trackList.forEach{
+            currentHistory.add(it)
         }
+        while (currentHistory.size > HISTORY_SIZE) {
+            currentHistory.removeAt(currentHistory.lastIndex)
+        }
+        val jsonHistory = gson.toJson(currentHistory)
+
+        editor.putString(SEARCH_HISTORY, jsonHistory)
+        editor.apply()
     }
 }

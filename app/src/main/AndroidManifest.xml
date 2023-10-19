@@ -24,6 +24,10 @@
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
         <activity
+            android:name=".PlayerActivity"
+            android:exported="false"
+            android:parentActivityName=".SearchActivity"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

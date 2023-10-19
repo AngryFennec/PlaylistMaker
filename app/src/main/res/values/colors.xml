@@ -7,6 +7,7 @@
     <color name="gray">#1A1B22</color>
     <color name="primaryBackground">#3772E7</color>
     <color name="secondaryBackground">#FFFFFF</color>
+    <color name="secondaryTint">#FFFFFF</color>
     <color name="secondaryColor">#1A1B22</color>
     <color name="hintColor">#AEAFB4</color>
     <color name="inputBackground">#E6E8EB</color>
@@ -14,4 +15,5 @@
     <color name="trackSubtitle">#AEAFB4</color>
     <color name="refreshBtnBackground">#1A1B22</color>
     <color name="activeSwitch">#3772E7</color>
+    <color name="btnBackColor">#1A1B22</color>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.playlistmaker
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -258,5 +260,8 @@ class SearchActivity : AppCompatActivity() {
         }
         historyTracks.add(0, track)
         searchHistory.addTracks(historyTracks)
+        val playerIntent = Intent(this, PlayerActivity::class.java)
+        playerIntent.putExtra("track", Gson().toJson(track))
+        startActivity(playerIntent)
     }
 }

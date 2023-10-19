@@ -2,10 +2,13 @@
 <resources>
     <color name="primaryBackground">#FF000000</color>
     <color name="secondaryBackground">#FF000000</color>
+    <color name="secondaryTint">#1A1B22</color>
     <color name="secondaryColor">#FFFFFF</color>
     <color name="hintColor">#FF000000</color>
     <color name="inputBackground">#FFFFFF</color>
     <color name="trackTitle">#FFFFFF</color>
     <color name="trackSubtitle">#FFFFFF</color>
     <color name="refreshBtnBackground">#FFFFFF</color>
+    <color name="activeSwitch">#3772E7</color>
+    <color name="btnBackColor">#FFFFFF</color>
 </resources>
